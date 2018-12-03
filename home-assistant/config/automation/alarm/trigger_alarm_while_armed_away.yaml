@@ -29,7 +29,7 @@
     - service: tts.google_say
       entity_id: media_player.volumio_mpd
       data_template:
-        message: 'Witaj w domu. W salonie jest {{ states.sensor.temperature_living_room_1.state }} stopnii.'
+        message: 'Witaj w domu. W salonie jest {{ states.sensor.temperature_living_room_1.state }} stopni.'
         language: 'pl'  
     - delay: '00:00:07'
     - service: media_player.volume_set
