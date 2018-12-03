@@ -1,0 +1,69 @@
+homeassistant:
+  name: Home
+  latitude: !secret latitude
+  longitude: !secret longitude
+  elevation: !secret elevation
+  unit_system: metric
+  time_zone: !secret time_zone
+  customize: !include customize.yaml
+
+frontend:
+config:
+
+http:
+  api_password: !secret http_password
+  base_url: !secret http_base_url
+
+updater:
+
+# Discover some devices automatically
+#discovery:
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+conversation:
+
+history:
+hassio:
+logbook:
+map:
+sun:
+
+tts:
+  platform: google
+  cache: true
+  cache_dir: /tmp/tts
+  time_memory: 300
+  language: 'pl'
+  
+cloud:
+
+switch:
+  platform: command_line
+  switches:
+    living_room:
+      command_on: "/usr/bin/curl -X GET http://LIVING_ROOM_HOST/control?cmd=GPIO,12,1"
+      command_off: "/usr/bin/curl -X GET http://LIVING_ROOM_HOST/control?cmd=GPIO,12,0"
+      value_template: '{{ value == "1" }}'
+      friendly_name: Living room
+
+recorder:
+  purge_keep_days: 5
+  purge_interval: 2  
+      
+logger:
+  default: debug
+
+xiaomi_aqara:
+  discovery_retry: 5
+  gateways:
+    - key: !secret xiaomi_aqara_key
+
+sensor: !include sensors.yaml
+group: !include groups.yaml
+automation: !include_dir_list automation
+script: !include scripts.yaml
+notify: !include notify.yaml
+zone: !include zones.yaml
+media_player: !include media_players.yaml
+alarm_control_panel: !include alarm_panels.yaml
+device_tracker: !include device_trackers.yaml

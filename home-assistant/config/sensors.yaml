@@ -1,0 +1,77 @@
+- platform: systemmonitor
+  resources:
+    - type: disk_use_percent
+      arg: /
+    - type: memory_use_percent
+    - type: network_in
+      arg: eth0
+    - type: network_out
+      arg: eth0
+    - type: last_boot
+    - type: processor_use
+    - type: load_1m
+
+- platform: darksky
+  api_key: !secret darksky_api_key
+  language: pl 
+  forecast:
+      - 1
+  monitored_conditions:
+      - summary
+      - daily_summary
+      - temperature
+      - temperature_high
+      - temperature_low
+      - apparent_temperature
+      - humidity
+      - pressure
+      - wind_speed
+      - cloud_cover
+      - precip_type
+      - precip_intensity
+      - precip_probability
+
+- platform: rest
+  name: Airly
+  resource: !secret airly_url
+  headers:
+    apikey: !secret airly_api_key
+    Accept-Language: 'pl'
+  value_template: "{{ value_json['current']['values'][1]['value'] }} {{ value_json['current']['values'][2]['value'] }} {{ value_json['current']['values'][3]['value'] }} {{ value_json['current']['values'][4]['value'] }} {{ value_json['current']['values'][5]['value'] }} {{ value_json['current']['indexes'][0]['level'] }}#{{ value_json['current']['indexes'][0]['description'] }}|{{ value_json['current']['indexes'][0]['advice'] }}"
+  scan_interval: 180
+
+- platform: template
+  sensors:
+    airly_pm25:
+      friendly_name: "PM 2.5 (zew.)"
+      unit_of_measurement: "μg/m3"
+      value_template: "{{ states.sensor.airly.state.split(' ')[0] }}"
+    airly_pm10:
+      friendly_name: "PM 10 (zew.)"
+      unit_of_measurement: "μg/m3"
+      value_template: "{{ states.sensor.airly.state.split(' ')[1] }}"
+    airly_pressure:
+      unit_of_measurement: "hPA"
+      value_template: "{{ states.sensor.airly.state.split(' ')[2] }}"
+    airly_humidity:
+      unit_of_measurement: "%"
+      value_template: "{{ states.sensor.airly.state.split(' ')[3] }}"
+    airly_temperature:
+      unit_of_measurement: "°C"
+      value_template: "{{ states.sensor.airly.state.split(' ')[4] }}"
+    airly_quality:
+      value_template: "{{ states.sensor.airly.state.split(' ')[5] }}"
+    airly_index_description:
+      friendly_name: "Opis"
+      value_template: "{{ states.sensor.airly.state.split('#')[1].split('|')[0] }}"
+    airly_index_advice:
+      friendly_name: "Rada"
+      value_template: "{{ states.sensor.airly.state.split('#')[1].split('|')[1] }}"
+    pm25_max_level:
+      friendly_name: "PM 2.5 MAX"
+      unit_of_measurement: "μg/m3"
+      value_template: "25"
+    pm10_max_level:
+      friendly_name: "PM 10 MAX"
+      unit_of_measurement: "μg/m3"
+      value_template: "50"

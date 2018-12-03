@@ -1,0 +1,10 @@
+   alias: User2 enter work
+   trigger:
+     platform: zone
+     event: enter
+     zone: zone.praca__user1
+     entity_id: device_tracker.google_maps_user2
+   action:
+    - service: notify.defaultPushOver
+      data:
+        message: 'User2 dotarła do pracy'

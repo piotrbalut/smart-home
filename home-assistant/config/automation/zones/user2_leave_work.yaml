@@ -1,0 +1,10 @@
+   alias: User2 leave work
+   trigger:
+     platform: zone
+     event: leave
+     zone:  zone.praca__user2
+     entity_id: device_tracker.google_maps_user2
+   action:
+    - service: notify.defaultPushOver
+      data:
+        message: 'User2 wyszła z pracy'
