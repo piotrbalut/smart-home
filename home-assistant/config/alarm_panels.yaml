@@ -1,0 +1,8 @@
+  - platform: manual
+    name: Home Alarm
+    code: !secret alarm_key
+    pending_time: 20
+    delay_time: 20
+    trigger_time: 40
+    disarmed:
+      trigger_time: 0

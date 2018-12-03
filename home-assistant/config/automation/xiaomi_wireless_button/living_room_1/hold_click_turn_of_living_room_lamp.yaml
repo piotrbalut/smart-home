@@ -1,0 +1,10 @@
+  alias: Turn off lamp in living room
+  trigger:
+    platform: event
+    event_type: xiaomi_aqara.click
+    event_data:
+      entity_id: binary_sensor.switch_living_room_1
+      click_type: hold
+  action:
+    - service: homeassistant.turn_off
+      entity_id: switch.living_room

@@ -1,0 +1,30 @@
+  alias: Arm alarm when all leave home
+  trigger:
+    platform: time
+    # This will match every 2 minutes
+    minutes: '/2'
+    seconds: 00       
+  condition:
+    - condition: state
+      entity_id: alarm_control_panel.home_alarm
+      state: disarmed
+    - condition: state
+    # User1 wifi
+      entity_id: 'device_tracker.user1'
+      state: 'not_home'
+    - condition: state
+    # User2 wifi
+      entity_id: 'device_tracker.user2'
+      state: 'not_home' 
+    - condition: time
+      # At least one of the following is required.
+      after: '07:00:00'
+      before: '23:00:00'      
+  action:
+    - service: alarm_control_panel.alarm_arm_away
+      data:
+        entity_id: alarm_control_panel.home_alarm
+        code: !secret alarm_key
+    - service: notify.defaultPushOver
+      data:
+        message: "Uzbrojono alarm"    

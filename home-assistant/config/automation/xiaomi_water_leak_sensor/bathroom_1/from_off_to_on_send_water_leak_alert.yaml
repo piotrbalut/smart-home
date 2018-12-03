@@ -1,0 +1,10 @@
+  alias: Send alert when water leak in bathroom detected
+  trigger:
+    platform: state
+    entity_id:  binary_sensor.water_leak_sensor_bathroom_1
+    from: 'off'
+    to: 'on'
+  action:
+    - service: notify.defaultPushOver
+      data:
+        message: "WYCIEK! W łazience cieknie woda"
