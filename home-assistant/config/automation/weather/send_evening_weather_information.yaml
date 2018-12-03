@@ -1,0 +1,25 @@
+  alias: Send weather information
+  trigger:
+    - platform: time
+      at: '20:55:00'
+  condition:
+    - condition: time
+    # At least one of the following is required.
+      weekday:
+       - mon
+       - tue
+       - wed
+       - thu
+       - fri   
+    - condition: state
+    # User1 wifi
+      entity_id: 'device_tracker.user1'
+      state: 'home'       
+  action:
+    - service: notify.defaultPushOver
+      data:
+        message: 'Jutro będzie maksymalnie {{ states.sensor.dark_sky_daytime_high_temperature_1.state }} stopni 
+          {% if states.sensor.dark_sky_daytime_high_temperature_1.state | float > states.sensor.dark_sky_daytime_high_temperature.state | float %} (o {{(float(states.sensor.dark_sky_daytime_high_temperature_1.state) - float(states.sensor.dark_sky_daytime_high_temperature.state)) | round(2)}} więcej niż dzisiaj).  
+          {% elif states.sensor.dark_sky_daytime_high_temperature_1.state | float == states.sensor.dark_sky_daytime_high_temperature.state | float %} (tyle ile dzisiaj).
+          {% else %}(o {{(float(states.sensor.dark_sky_daytime_high_temperature.state) - float(states.sensor.dark_sky_daytime_high_temperature_1.state)) | round(2)}} mniej niż dzisiaj).  
+          {% endif %} Szanse na opady {{ states.sensor.dark_sky_precip_probability_1.state | round(0) }}%. W nocy temperatura spadnie do {{states.sensor.dark_sky_overnight_low_temperature_1.state}} stopni.'

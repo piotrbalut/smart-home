@@ -1,0 +1,18 @@
+  - name: Praca - User1
+    latitude: !secret work_user1_latitude
+    longitude: !secret work_user1_longitude
+    radius: 150
+    icon: mdi:worker
+
+  - name: Praca - User2
+    latitude: !secret work_user2_latitude
+    longitude: !secret work_user2_longitude
+    radius: 150
+    icon: mdi:worker
+
+  # This will override the default home zone
+  - name: Dom
+    latitude: !secret work_home_latitude
+    longitude: !secret work_home_longitude
+    radius: 100
+    icon: mdi:account-multiple

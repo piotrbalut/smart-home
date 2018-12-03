@@ -1,0 +1,28 @@
+  alias: Send morning rain information
+  trigger:
+    - platform: time
+      at: '07:05:00'
+  condition:
+    - condition: time
+    # At least one of the following is required.
+      weekday:
+       - mon
+       - tue
+       - wed
+       - thu
+       - fri
+    - condition: template
+      value_template: '{{ states.sensor.dark_sky_precip_probability.state | float > 20 }}'    
+    - condition: state
+    # User1 wifi
+      entity_id: 'device_tracker.user1'
+      state: 'home'       
+  action:
+    - service: notify.defaultPushOver
+      data:
+        message: 'ZABIERZ PARASOL! Szanse na opady to {{ states.sensor.dark_sky_precip_probability.state | round(0) }}%'
+    - service: notify.messenger
+      data:
+        message: 'ZABIERZ PARASOL! Szanse na opady to {{ states.sensor.dark_sky_precip_probability.state | round(0) }}%'
+        target:
+          - BROADCAST

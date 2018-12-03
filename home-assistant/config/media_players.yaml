@@ -1,0 +1,12 @@
+  - platform: samsungtv
+    name: Living Room TV
+    host: !secret living_room_samsungtv_ip
+    port: !secret living_room_samsungtv_port
+    timeout: !secret living_room_samsungtv_timeout
+  - platform: volumio
+    name: Living Room Volumio
+    host: !secret living_room_volumio_ip
+    port: !secret living_room_volumio_port
+  - platform: mpd
+    name: volumio_mpd
+    host: !secret living_room_volumio_mdp_ip

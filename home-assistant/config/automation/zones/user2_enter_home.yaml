@@ -1,0 +1,10 @@
+   alias: User2 enter home
+   trigger:
+     platform: zone
+     event: enter
+     zone: zone.dom
+     entity_id: device_tracker.google_maps_user2
+   action:
+    - service: notify.defaultPushOver
+      data:
+        message: 'User2 wróciła do domu'
