@@ -1,0 +1,8 @@
+  alias: Send daily weather summary
+  trigger:
+    - platform: time
+      at: '11:05:00'     
+  action:
+    - service: notify.pushpiotr
+      data:
+        message: '{{ states.sensor.dark_sky_daily_summary.state }}'
