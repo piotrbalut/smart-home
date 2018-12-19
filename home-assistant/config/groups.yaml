@@ -33,7 +33,8 @@
     name: Okna
     entities:
     - binary_sensor.door_window_sensor_balcony
-    - binary_sensor.door_window_sensor_kitchen    
+    - binary_sensor.door_window_sensor_kitchen
+    - binary_sensor.door_window_sensor_living_room     
       
   MotionSensors:
     name: Ruch
