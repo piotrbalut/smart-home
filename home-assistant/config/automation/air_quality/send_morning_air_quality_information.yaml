@@ -1,7 +1,7 @@
   alias: Send morning air quality information
   trigger:
     - platform: time
-      at: '07:05:00'
+      at: '06:38:00'
   condition:
     - condition: time
     # At least one of the following is required.
@@ -19,8 +19,6 @@
     - service: notify.defaultPushOver
       data:
         message: '{{ states.sensor.airly_index_description.state }}
-        
-         {{ states.sensor.airly_index_advice.state }}
 
         PM 2.5 
         
