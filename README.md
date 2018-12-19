@@ -66,3 +66,5 @@ Version: **0.84.3**
 
 **Scripts:**  
 - [sds011.py](./external-scripts/air-quality/sds011.py) - reads PM 10 and PM 2.5 from Air Quality Sensor. Measurements are sending to to Home Assistant.
+---
+*Due to security reason, some automations and devices are hidden*
