@@ -1,12 +1,14 @@
 # Dark sky
 sensor.dark_sky_temperature:
   friendly_name: Temperatura
-sensor.dark_sky_daytime_high_temperature:
+sensor.dark_sky_daytime_high_temperature_0:
   friendly_name: Max. temperatura
-sensor.dark_sky_overnight_low_temperature:
+sensor.dark_sky_overnight_low_temperature_0:
   friendly_name: Min. temperatura
 sensor.dark_sky_apparent_temperature:
   friendly_name: Odczuwalna temperatura
+sensor.dark_sky_cloud_coverage:
+  friendly_name: Zachmurzenie
 sensor.dark_sky_summary:
   friendly_name: Podsumowanie
 sensor.dark_sky_humidity:
@@ -23,14 +25,10 @@ sensor.dark_sky_precip_intensity_1:
   friendly_name: Intensywność
 sensor.dark_sky_summary_1:
   friendly_name: Podsumowanie
-sensor.dark_sky_temperature_1:
-  friendly_name: Temperatura
 sensor.dark_sky_daytime_high_temperature_1:
   friendly_name: Max. temperatura
 sensor.dark_sky_overnight_low_temperature_1:
   friendly_name: Min. temperatura
-sensor.dark_sky_apparent_temperature_1:
-  friendly_name: Odczuwalna temperatura
 sensor.dark_sky_humidity_1:
   friendly_name: Wilgotność
 sensor.dark_sky_pressure_1:

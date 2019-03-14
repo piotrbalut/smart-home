@@ -1,6 +1,6 @@
   alias: Arm alarm when all leave home
   trigger:
-    platform: time
+    platform: time_pattern
     # This will match every 2 minutes
     minutes: '/2'
     seconds: 00       

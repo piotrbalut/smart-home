@@ -1,10 +1,4 @@
 #Groups
-  Family:
-    name: Osoby
-    entities:
-      - device_tracker.google_maps_user1
-      - device_tracker.google_maps_user2
-
   Security:
     name: Alarm
     entities:
@@ -65,26 +59,23 @@
     entities:
     - sensor.dark_sky_summary
     - sensor.dark_sky_temperature
-    - sensor.dark_sky_daytime_high_temperature
-    - sensor.dark_sky_overnight_low_temperature
+    - sensor.dark_sky_daytime_high_temperature_0
+    - sensor.dark_sky_overnight_low_temperature_0
     - sensor.dark_sky_apparent_temperature
     - sensor.dark_sky_humidity
     - sensor.dark_sky_pressure
     - sensor.dark_sky_wind_speed
-    - sensor.dark_sky_cloud_cover
+    - sensor.dark_sky_cloud_coverage
     
   WeatherForecastTomorrow:
     name: Jutro
     entities:
     - sensor.dark_sky_summary_1
-    - sensor.dark_sky_temperature_1
     - sensor.dark_sky_daytime_high_temperature_1
     - sensor.dark_sky_overnight_low_temperature_1
-    - sensor.dark_sky_apparent_temperature_1
     - sensor.dark_sky_humidity_1
     - sensor.dark_sky_pressure_1
     - sensor.dark_sky_wind_speed_1
-    - sensor.dark_sky_cloud_cover_1
     
   WeatherPrecipitationForecastTomorrow:
     name: Opady jutro
@@ -120,7 +111,6 @@
     name: Ogólne
     view: yes
     entities:
-    - group.family
     - group.security
     - group.temperature
     - group.humidity
