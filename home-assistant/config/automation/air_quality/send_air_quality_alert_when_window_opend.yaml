@@ -8,6 +8,7 @@
       # Kitchen window
       entity_id: binary_sensor.door_window_sensor_kitchen
       to: 'on'
+    - platform: state
       # Living room window
       entity_id: binary_sensor.door_window_sensor_living_room
       to: 'on'
