@@ -1,12 +1,12 @@
 # Smart Home
 
 Here's my Smart Home scripts and [Home Assistant](https://home-assistant.io/) configuration.  
-Version: **1.0.2** ([Releases](https://github.com/piotrbalut/smart-home/releases))
+Version: **1.0.3** ([Releases](https://github.com/piotrbalut/smart-home/releases))
 
 ## Home Assistant Configuration
 ![Home Assistant logo](https://raw.githubusercontent.com/home-assistant/home-assistant-assets/master/loading-screen.gif)
 
-Version: **0.89.2**
+Version: **0.95.4**
 
 **Hardware:**  
 

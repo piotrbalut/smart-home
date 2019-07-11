@@ -18,12 +18,12 @@
   action:
     - service: notify.defaultPushOver
       data:
-        message: 'Jutro będzie maksymalnie {{ states.sensor.dark_sky_daytime_high_temperature_1.state }} stopni 
-          {% if states.sensor.dark_sky_daytime_high_temperature_1.state | float > states.sensor.dark_sky_daily_high_temperature_0.state | float %} (o {{(float(states.sensor.dark_sky_daytime_high_temperature_1.state) - float(states.sensor.dark_sky_daily_high_temperature_0.state)) | round(2)}} więcej niż dzisiaj).  
-          {% elif states.sensor.dark_sky_daytime_high_temperature_1.state | float == states.sensor.dark_sky_daily_high_temperature_0.state | float %} (tyle ile dzisiaj).
-          {% else %}(o {{(float(states.sensor.dark_sky_daily_high_temperature_0.state) - float(states.sensor.dark_sky_daytime_high_temperature_1.state)) | round(2)}} mniej niż dzisiaj).  
-          {% endif %}{% if states.sensor.dark_sky_precip_1.state | string == "rain" %} Szanse na opady deszczu to {{ states.sensor.dark_sky_precip_probability_1.state | round(0) }}% 
-          {% elif states.sensor.dark_sky_precip_1.state | string == "snow" %} Szanse na opady śniegu to {{ states.sensor.dark_sky_precip_probability_1.state | round(0) }}%
-          {% else %}Szanse na opady to {{ states.sensor.dark_sky_precip_probability_1.state | round(0) }}%
+        message: 'Jutro będzie maksymalnie {{ states.sensor.dark_sky_daytime_high_temperature_1d.state }} stopni 
+          {% if states.sensor.dark_sky_daytime_high_temperature_1d.state | float > states.sensor.dark_sky_daily_high_temperature_0d.state | float %} (o {{(float(states.sensor.dark_sky_daytime_high_temperature_1d.state) - float(states.sensor.dark_sky_daily_high_temperature_0d.state)) | round(2)}} więcej niż dzisiaj).  
+          {% elif states.sensor.dark_sky_daytime_high_temperature_1d.state | float == states.sensor.dark_sky_daily_high_temperature_0d.state | float %} (tyle ile dzisiaj).
+          {% else %}(o {{(float(states.sensor.dark_sky_daily_high_temperature_0d.state) - float(states.sensor.dark_sky_daytime_high_temperature_1d.state)) | round(2)}} mniej niż dzisiaj).  
+          {% endif %}{% if states.sensor.dark_sky_precip_1d.state | string == "rain" %} Szanse na opady deszczu to {{ states.sensor.dark_sky_precip_probability_1d.state | round(0) }}% 
+          {% elif states.sensor.dark_sky_precip_1d.state | string == "snow" %} Szanse na opady śniegu to {{ states.sensor.dark_sky_precip_probability_1d.state | round(0) }}%
+          {% else %}Szanse na opady to {{ states.sensor.dark_sky_precip_probability_1d.state | round(0) }}%
           {% endif %}.
-          W nocy temperatura spadnie do {{states.sensor.dark_sky_overnight_low_temperature_1.state}} stopni.'
+          W nocy temperatura spadnie do {{states.sensor.dark_sky_overnight_low_temperature_1d.state}} stopni.'
