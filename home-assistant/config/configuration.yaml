@@ -9,6 +9,7 @@ homeassistant:
 
 frontend:
 config:
+system_health:
 
 http:
   api_password: !secret http_password
@@ -29,11 +30,12 @@ map:
 sun:
 
 tts:
-  platform: google
+  platform: google_translate
   cache: true
   cache_dir: /tmp/tts
   time_memory: 300
   language: 'pl'
+  service_name: google_say
   
 cloud:
 

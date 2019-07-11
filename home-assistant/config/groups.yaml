@@ -59,8 +59,8 @@
     entities:
     - sensor.dark_sky_summary
     - sensor.dark_sky_temperature
-    - sensor.dark_sky_daytime_high_temperature_0
-    - sensor.dark_sky_overnight_low_temperature_0
+    - sensor.dark_sky_daytime_high_temperature_0d
+    - sensor.dark_sky_overnight_low_temperature_0d
     - sensor.dark_sky_apparent_temperature
     - sensor.dark_sky_humidity
     - sensor.dark_sky_pressure
@@ -70,19 +70,19 @@
   WeatherForecastTomorrow:
     name: Jutro
     entities:
-    - sensor.dark_sky_summary_1
-    - sensor.dark_sky_daytime_high_temperature_1
-    - sensor.dark_sky_overnight_low_temperature_1
-    - sensor.dark_sky_humidity_1
-    - sensor.dark_sky_pressure_1
-    - sensor.dark_sky_wind_speed_1
+    - sensor.dark_sky_summary_1d
+    - sensor.dark_sky_daytime_high_temperature_1d
+    - sensor.dark_sky_overnight_low_temperature_1d
+    - sensor.dark_sky_humidity_1d
+    - sensor.dark_sky_pressure_1d
+    - sensor.dark_sky_wind_speed_1d
     
   WeatherPrecipitationForecastTomorrow:
     name: Opady jutro
     entities:
-    - sensor.dark_sky_precip_1
-    - sensor.dark_sky_precip_probability_1
-    - sensor.dark_sky_precip_intensity_1
+    - sensor.dark_sky_precip_1d
+    - sensor.dark_sky_precip_probability_1d
+    - sensor.dark_sky_precip_intensity_1d
 
     
   AirQuality:
