@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 """This module provides an abstraction for the SDS011 air partuclate densiry sensor.
 """
 import struct
@@ -56,7 +59,7 @@ class SDS011(object):
         """Read reply from device."""
         raw = self.ser.read(size=10)
         data = raw[2:8]
-        if (sum(d for d in data) & 255) != raw[8]:
+        if (sum(ord(d) for d in data) & 255) != ord(raw[8]):
             return None  #TODO: also check cmd id
         return raw
 
@@ -133,7 +136,7 @@ class SDS011(object):
         @rtype: list
         """
         cmd += id1 + id2
-        checksum = sum(d for d in cmd[2:]) % 256
+        checksum = sum(ord(d) for d in cmd[2:]) % 256
         cmd += bytes([checksum]) + self.TAIL
         return cmd
 
@@ -150,8 +153,8 @@ class SDS011(object):
             9 - Tail
         """
         raw = struct.unpack('<HHxxBBB', data[2:])
-        checksum = sum(v for v in data[2:8]) % 256
-        if checksum != data[8]:
+        checksum = sum(ord(v) for v in data[2:8]) % 256
+        if checksum != ord(data[8]):
             return None
         pm25 = raw[0] / 10.0
         pm10 = raw[1] / 10.0
