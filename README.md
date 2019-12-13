@@ -1,12 +1,12 @@
 # Smart Home
 
 Here's my Smart Home scripts and [Home Assistant](https://home-assistant.io/) configuration.  
-Version: **1.0.3** ([Releases](https://github.com/piotrbalut/smart-home/releases))
+Version: **1.1.0** ([Releases](https://github.com/piotrbalut/smart-home/releases))
 
 ## Home Assistant Configuration
 ![Home Assistant logo](https://raw.githubusercontent.com/home-assistant/home-assistant-assets/master/loading-screen.gif)
 
-Version: **0.95.4**
+Version: **0.103.0**
 
 **Hardware:**  
 
@@ -44,7 +44,6 @@ Version: **0.95.4**
 
 **Services:**  
 - [DarkSky](https://darksky.net)  
-- [Airly](https://airly.eu)
 
 **Text-to-Speech:**  
 - Google
