@@ -84,17 +84,6 @@
     - sensor.dark_sky_precip_probability_1d
     - sensor.dark_sky_precip_intensity_1d
 
-    
-  AirQuality:
-    name: Powietrze
-    entities:
-    - sensor.airly_pm25
-    - sensor.air_quality_indoor_pm25
-    - sensor.airly_pm10
-    - sensor.air_quality_indoor_pm10    
-    - sensor.airly_index_description
-    - sensor.airly_index_advice
-
   System:
     name: System
     entities:

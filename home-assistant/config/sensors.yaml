@@ -31,17 +31,8 @@
       - cloud_cover
       - precip_type
       - precip_intensity
-      - precip_probability
-
-- platform: rest
-  name: Airly
-  resource: !secret airly_url
-  headers:
-    apikey: !secret airly_api_key
-    Accept-Language: 'pl'
-  value_template: "{{ value_json['current']['values'][1]['value'] }} {{ value_json['current']['values'][2]['value'] }} {{ value_json['current']['values'][3]['value'] }} {{ value_json['current']['values'][4]['value'] }} {{ value_json['current']['values'][5]['value'] }} {{ value_json['current']['indexes'][0]['level'] }}#{{ value_json['current']['indexes'][0]['description'] }}|{{ value_json['current']['indexes'][0]['advice'] }}"
-  scan_interval: 180
-
+      - precip_probability    
+      
 - platform: template
   sensors:
     airly_pm25:
