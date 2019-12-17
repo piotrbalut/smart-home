@@ -1,0 +1,10 @@
+  alias: Send alert when water leak under bath detected
+  trigger:
+    platform: state
+    entity_id:  binary_sensor.water_leak_sensor_158d000256498f
+    from: 'off'
+    to: 'on'
+  action:
+    - service: notify.pushpiotr
+      data:
+        message: "WYCIEK POD WANNĄ"
