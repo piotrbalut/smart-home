@@ -1,7 +1,7 @@
   alias: Morning play music
   trigger:
     - platform: time
-      at: '06:16:00'
+      at: '05:30:00'
   condition:
     - condition: time
     # At least one of the following is required.
