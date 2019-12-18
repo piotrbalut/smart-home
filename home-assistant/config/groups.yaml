@@ -51,7 +51,7 @@
     name: Odtwarzacze
     entities:
     - media_player.living_room_tv
-    - media_player.living_room_volumio
+    - media_player.kitchen_volumio
     - media_player.volumio_mpd
 
   WeatherToday:

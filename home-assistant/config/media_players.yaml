@@ -4,9 +4,9 @@
     port: !secret living_room_samsungtv_port
     timeout: !secret living_room_samsungtv_timeout
   - platform: volumio
-    name: Living Room Volumio
-    host: !secret living_room_volumio_ip
-    port: !secret living_room_volumio_port
+    name: Kitchen Room Volumio
+    host: !secret kitchen_volumio_ip
+    port: !secret kitchen_volumio_port
   - platform: mpd
     name: volumio_mpd
-    host: !secret living_room_volumio_mdp_ip
+    host: !secret kitchen_volumio_mdp_ip

@@ -1,4 +1,4 @@
-alias: Turn on living room volumio when cube flip 90
+alias: Turn on kitchen volumio when cube flip 90
 trigger:
   - platform: event
     event_type: xiaomi_aqara.cube_action
@@ -7,12 +7,12 @@ trigger:
       action_type: flip90
 condition:
   - condition: state
-    entity_id: 'media_player.living_room_volumio'
+    entity_id: 'media_player.kitchen_volumio'
     state: 'idle'    
 action:
     - service: media_player.volume_set
-      entity_id: media_player.living_room_volumio
+      entity_id: media_player.kitchen_volumio
       data:
         volume_level: 0.3
     - service: media_player.media_play
-      entity_id: media_player.living_room_volumio
+      entity_id: media_player.kitchen_volumio
