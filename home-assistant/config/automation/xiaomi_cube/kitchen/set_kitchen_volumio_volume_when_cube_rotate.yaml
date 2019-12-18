@@ -3,7 +3,7 @@ trigger:
   - platform: event
     event_type: xiaomi_aqara.cube_action
     event_data:
-      entity_id: binary_sensor.cube_bathroom_1
+      entity_id: binary_sensor.cube_kitchen_1
       action_type: rotate
 condition:
   - condition: state

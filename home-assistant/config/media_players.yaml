@@ -10,3 +10,10 @@
   - platform: mpd
     name: volumio_mpd
     host: !secret kitchen_volumio_mdp_ip
+  - platform: volumio
+    name: Bathroom volumio
+    host: !secret bathroom_volumio_ip
+    port: !secret bathroom_volumio_port
+  - platform: mpd
+    name: bathroom_volumio_mpd
+    host: !secret bathroom_volumio_mdp_ip    
