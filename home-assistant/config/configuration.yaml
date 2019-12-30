@@ -50,15 +50,6 @@ tts:
   
 cloud:
 
-switch:
-  platform: command_line
-  switches:
-    living_room:
-      command_on: "/usr/bin/curl -X GET http://LIVING_ROOM_HOST/control?cmd=GPIO,12,1"
-      command_off: "/usr/bin/curl -X GET http://LIVING_ROOM_HOST/control?cmd=GPIO,12,0"
-      value_template: '{{ value == "1" }}'
-      friendly_name: Living room
-
 recorder:
   purge_keep_days: 5
   purge_interval: 2  
