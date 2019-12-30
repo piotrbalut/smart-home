@@ -18,7 +18,13 @@ python_script:
 updater:
 
 # Discover some devices automatically
-#discovery:
+discovery:
+  ignore:
+    - yeelight
+yeelight:
+  devices:
+    192.168.1.15:
+      name: Salon
 
 # Allows you to issue voice commands from the frontend in enabled browsers
 conversation:
