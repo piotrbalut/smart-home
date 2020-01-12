@@ -16,4 +16,9 @@
     port: !secret bathroom_volumio_port
   - platform: mpd
     name: bathroom_volumio_mpd
-    host: !secret bathroom_volumio_mdp_ip    
+    host: !secret bathroom_volumio_mdp_ip
+  - platform: androidtv
+    name: Sypialnia TV
+    host: !secret bedroom_tv_ip
+    adb_server_ip: !secret adb_server_ip
+    adb_server_port: !secret adb_server_port            

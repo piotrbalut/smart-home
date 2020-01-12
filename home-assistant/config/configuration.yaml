@@ -75,3 +75,4 @@ zone: !include zones.yaml
 media_player: !include media_players.yaml
 alarm_control_panel: !include alarm_panels.yaml
 device_tracker: !include device_trackers.yaml
+scene: !include_dir_list scenes

@@ -1,0 +1,7 @@
+  name: Good night
+  entities:
+      light.lampka_user2: off
+      light.lampka_user1: off
+      switch.shelly2_5_bedroom_relay_0: off
+      media_player.sypialnia_tv:
+        state: off      

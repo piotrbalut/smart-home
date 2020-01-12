@@ -1,0 +1,15 @@
+  name: Romantic evening
+  entities:
+      light.lampka_user2:
+        state: on
+        kelvin: 3000
+        brightness: 45
+        rgb_color: [230, 119, 119]
+      light.lampka_user1:
+        state: on
+        kelvin: 3000
+        brightness: 45
+        rgb_color: [230, 119, 119]  
+      switch.shelly2_5_bedroom_relay_0: off
+      media_player.sypialnia_tv:
+        state: off

@@ -1,0 +1,13 @@
+  name: Evening chill out
+  entities:
+      light.lampka_user2:
+        state: on
+        kelvin: 3000
+        brightness: 20
+      light.lampka_user1:
+        state: on
+        kelvin: 3000
+        brightness: 20  
+      switch.shelly2_5_bedroom_relay_0: off
+      media_player.sypialnia_tv:
+        state: on

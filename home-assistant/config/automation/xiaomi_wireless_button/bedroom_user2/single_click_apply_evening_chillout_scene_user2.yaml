@@ -1,0 +1,10 @@
+  alias: Evening chillout
+  trigger:
+    platform: event
+    event_type: xiaomi_aqara.click
+    event_data:
+      entity_id: binary_sensor.switch_user2
+      click_type: single
+  action:
+    service: scene.turn_on
+    entity_id: scene.evening_chill_out
