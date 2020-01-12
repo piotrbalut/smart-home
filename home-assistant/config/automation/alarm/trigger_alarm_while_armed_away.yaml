@@ -1,20 +1,36 @@
   alias: Trigger alarm while armed away
   trigger:
     - platform: state
-      # Balcony door
-      entity_id: binary_sensor.door_window_sensor_balcony
+      # Entry - door
+      entity_id: binary_sensor.door_window_sensor_entry
       to: 'on'
     - platform: state
-      # Living room motion detection
-      entity_id: binary_sensor.motion_sensor_living_room
+      # Entry - motion
+      entity_id: binary_sensor.motion_sensor_entry
       to: 'on'      
     - platform: state
-      # Hall motion detection
-      entity_id: binary_sensor.motion_sensor_hall
+      # Living room - motion
+      entity_id: binary_sensor.motion_sensor_living_room
       to: 'on'   
     - platform: state
-      # Way out
-      entity_id: binary_sensor.door_window_sensor_entry
+      # Kitchen - window
+      entity_id: binary_sensor.door_window_sensor_kitchen
+      to: 'on'   
+    - platform: state
+      # Bedroom - motion
+      entity_id: binary_sensor.motion_sensor_bedroom
+      to: 'on'   
+    - platform: state
+      # Bedroom - left window
+      entity_id: binary_sensor.door_window_sensor_bedroom_left
+      to: 'on'
+    - platform: state
+      # Bedroom - right window
+      entity_id: binary_sensor.door_window_sensor_bedroom_right
+      to: 'on'
+    - platform: state
+      # Bathroom - motion
+      entity_id: binary_sensor.motion_sensor_bathroom
       to: 'on'         
   condition:
     - condition: state
@@ -29,7 +45,7 @@
     - service: tts.google_say
       entity_id: media_player.volumio_mpd
       data_template:
-        message: 'Witaj w domu. W salonie jest {{ states.sensor.temperature_living_room_1.state }} stopni.'
+        message: 'Witaj w domu'
         language: 'pl'  
     - delay: '00:00:07'
     - service: media_player.volume_set
